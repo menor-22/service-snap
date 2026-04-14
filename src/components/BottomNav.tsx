@@ -1,12 +1,14 @@
 import { useNavigate } from "react-router-dom";
-import { Home, Search, CalendarCheck, User } from "lucide-react";
+import homeIcon from "@/assets/home-icon.png";
+import searchIcon from "@/assets/search-icon.png";
 import calendarIcon from "@/assets/calendar-icon.png";
+import pinIcon from "@/assets/pin.png";
 
 const tabs = [
-  { id: "home", icon: Home, label: "Início", path: "/home" },
-  { id: "explore", icon: Search, label: "Explorar", path: "/explore" },
-  { id: "bookings", icon: CalendarCheck, label: "Reservas", path: "/bookings" },
-  { id: "profile", icon: User, label: "Perfil", path: "/profile" },
+  { id: "home", icon: homeIcon, label: "Início", path: "/home" },
+  { id: "explore", icon: searchIcon, label: "Explorar", path: "/explore" },
+  { id: "bookings", icon: calendarIcon, label: "Reservas", path: "/bookings" },
+  { id: "profile", icon: pinIcon, label: "Perfil", path: "/profile" },
 ];
 
 const BottomNav = ({ active }: { active: string }) => {
@@ -20,16 +22,12 @@ const BottomNav = ({ active }: { active: string }) => {
           <button
             key={tab.id}
             onClick={() => navigate(tab.path)}
-            className={`flex flex-col items-center gap-0.5 py-1 px-3 rounded-xl transition-colors ${
-              isActive ? "text-primary" : "text-muted-foreground"
+            className={`flex flex-col items-center gap-0.5 py-1 px-3 rounded-xl transition-all ${
+              isActive ? "opacity-100" : "opacity-40"
             }`}
           >
-            {tab.id === "bookings" ? (
-              <img src={calendarIcon} alt="Reservas" className={`w-5 h-5 ${isActive ? "opacity-100" : "opacity-50"}`} />
-            ) : (
-              <tab.icon className={`w-5 h-5 ${isActive ? "stroke-[2.5]" : ""}`} />
-            )}
-            <span className="text-xs font-medium">{tab.label}</span>
+            <img src={tab.icon} alt={tab.label} className="w-6 h-6 object-contain" />
+            <span className={`text-xs font-medium ${isActive ? "text-primary" : "text-muted-foreground"}`}>{tab.label}</span>
           </button>
         );
       })}

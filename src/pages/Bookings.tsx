@@ -1,6 +1,8 @@
-import { CalendarCheck, Clock } from "lucide-react";
+import { CalendarCheck } from "lucide-react";
 import { bookings } from "@/data/mockData";
 import BottomNav from "@/components/BottomNav";
+import clockIcon from "@/assets/clock.png";
+import calendarIcon from "@/assets/calendar-icon.png";
 
 const statusColors = {
   confirmed: "bg-primary/10 text-accent-foreground",
@@ -36,13 +38,13 @@ const Bookings = () => {
                 </span>
               </div>
               <div className="flex items-center gap-4 mt-3 pt-3 border-t">
-                <div className="flex items-center gap-1.5 text-muted-foreground">
-                  <CalendarCheck className="w-4 h-4" />
-                  <span className="text-sm">{new Date(booking.date).toLocaleDateString("pt-BR")}</span>
+                <div className="flex items-center gap-1.5">
+                  <img src={calendarIcon} alt="" className="w-4 h-4 opacity-60" />
+                  <span className="text-sm text-muted-foreground">{new Date(booking.date).toLocaleDateString("pt-BR")}</span>
                 </div>
-                <div className="flex items-center gap-1.5 text-muted-foreground">
-                  <Clock className="w-4 h-4" />
-                  <span className="text-sm">{booking.time}</span>
+                <div className="flex items-center gap-1.5">
+                  <img src={clockIcon} alt="" className="w-4 h-4 opacity-60" />
+                  <span className="text-sm text-muted-foreground">{booking.time}</span>
                 </div>
               </div>
             </div>
