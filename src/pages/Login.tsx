@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { CalendarCheck, Mail, Lock, Eye, EyeOff } from "lucide-react";
+import { Mail, Lock, Eye, EyeOff } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import logo4 from "@/assets/logo4.png";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -17,10 +18,7 @@ const Login = () => {
     <div className="mobile-container flex flex-col bg-background">
       <div className="flex-1 flex flex-col items-center justify-center px-8 gap-8">
         <div className="flex flex-col items-center gap-3">
-          <div className="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center">
-            <CalendarCheck className="w-8 h-8 text-primary-foreground" />
-          </div>
-          <h1 className="text-2xl font-bold text-card-foreground">AgendaFácil</h1>
+          <img src={logo4} alt="Agendei" className="h-10" />
           <p className="text-muted-foreground text-sm text-center">Entre para gerenciar seus agendamentos</p>
         </div>
 

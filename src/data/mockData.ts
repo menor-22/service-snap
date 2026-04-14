@@ -6,27 +6,31 @@ import catNutricao from "@/assets/cat-nutricao.png";
 import catPersonal from "@/assets/cat-personal.png";
 import catPet from "@/assets/cat-pet.png";
 import catPilates from "@/assets/cat-pilates.png";
+import catDentista from "@/assets/cat-dentista.png";
 
 export const categories = [
   { id: 1, name: "Médico", image: catMedico },
-  { id: 2, name: "Cabelo", image: catCabelo },
-  { id: 3, name: "Manicure", image: catManicure },
-  { id: 4, name: "Nutrição", image: catNutricao },
-  { id: 5, name: "Personal", image: catPersonal },
-  { id: 6, name: "Pilates", image: catPilates },
-  { id: 7, name: "Pet", image: catPet },
-  { id: 8, name: "Lava Car", image: catLavacar },
+  { id: 2, name: "Dentista", image: catDentista },
+  { id: 3, name: "Cabelo", image: catCabelo },
+  { id: 4, name: "Manicure", image: catManicure },
+  { id: 5, name: "Nutrição", image: catNutricao },
+  { id: 6, name: "Personal", image: catPersonal },
+  { id: 7, name: "Pilates", image: catPilates },
+  { id: 8, name: "Pet", image: catPet },
+  { id: 9, name: "Lava Car", image: catLavacar },
 ];
 
 export const professionals = [
   { id: 1, name: "Dra. Ana Silva", specialty: "Dermatologista", rating: 4.8, reviews: 120, location: "Centro, SP", image: "👩‍⚕️", categoryId: 1, price: 250 },
   { id: 2, name: "Dr. Carlos Lima", specialty: "Clínico Geral", rating: 4.9, reviews: 200, location: "Jardins, SP", image: "👨‍⚕️", categoryId: 1, price: 180 },
-  { id: 3, name: "Studio Hair", specialty: "Corte e Coloração", rating: 4.7, reviews: 95, location: "Moema, SP", image: "💇‍♀️", categoryId: 2, price: 120 },
-  { id: 4, name: "Nail Art Studio", specialty: "Manicure e Pedicure", rating: 4.9, reviews: 310, location: "Pinheiros, SP", image: "💅", categoryId: 3, price: 80 },
-  { id: 5, name: "Nutri Vida", specialty: "Nutrição Esportiva", rating: 4.8, reviews: 150, location: "Itaim, SP", image: "🥗", categoryId: 4, price: 220 },
-  { id: 6, name: "Fit Personal", specialty: "Personal Trainer", rating: 4.6, reviews: 88, location: "Vila Mariana, SP", image: "💪", categoryId: 5, price: 150 },
-  { id: 7, name: "Studio Pilates", specialty: "Pilates Reformer", rating: 4.8, reviews: 175, location: "Moema, SP", image: "🧘‍♀️", categoryId: 6, price: 130 },
-  { id: 8, name: "Pet Care", specialty: "Banho e Tosa", rating: 4.7, reviews: 200, location: "Brooklin, SP", image: "🐶", categoryId: 7, price: 90 },
+  { id: 3, name: "Dr. Marcos Souza", specialty: "Ortodontista", rating: 4.7, reviews: 95, location: "Moema, SP", image: "🦷", categoryId: 2, price: 300 },
+  { id: 4, name: "Studio Hair", specialty: "Corte e Coloração", rating: 4.7, reviews: 140, location: "Pinheiros, SP", image: "💇‍♀️", categoryId: 3, price: 120 },
+  { id: 5, name: "Nail Art Studio", specialty: "Manicure e Pedicure", rating: 4.9, reviews: 310, location: "Vila Mariana, SP", image: "💅", categoryId: 4, price: 80 },
+  { id: 6, name: "Nutri Vida", specialty: "Nutrição Esportiva", rating: 4.8, reviews: 150, location: "Itaim, SP", image: "🥗", categoryId: 5, price: 220 },
+  { id: 7, name: "Fit Personal", specialty: "Personal Trainer", rating: 4.6, reviews: 88, location: "Brooklin, SP", image: "💪", categoryId: 6, price: 150 },
+  { id: 8, name: "Studio Pilates", specialty: "Pilates Reformer", rating: 4.8, reviews: 175, location: "Moema, SP", image: "🧘‍♀️", categoryId: 7, price: 130 },
+  { id: 9, name: "Pet Care", specialty: "Banho e Tosa", rating: 4.7, reviews: 200, location: "Brooklin, SP", image: "🐶", categoryId: 8, price: 90 },
+  { id: 10, name: "Auto Brilho", specialty: "Lavagem Completa", rating: 4.5, reviews: 160, location: "Santo Amaro, SP", image: "🚗", categoryId: 9, price: 60 },
 ];
 
 export const services = [
@@ -35,10 +39,12 @@ export const services = [
   { id: 3, name: "Peeling Facial", duration: "60 min", price: 350, professionalId: 1 },
   { id: 4, name: "Consulta Geral", duration: "40 min", price: 180, professionalId: 2 },
   { id: 5, name: "Check-up Completo", duration: "90 min", price: 400, professionalId: 2 },
-  { id: 6, name: "Corte Feminino", duration: "45 min", price: 120, professionalId: 3 },
-  { id: 7, name: "Coloração", duration: "90 min", price: 250, professionalId: 3 },
-  { id: 8, name: "Manicure Gel", duration: "60 min", price: 80, professionalId: 4 },
-  { id: 9, name: "Pedicure Completa", duration: "45 min", price: 70, professionalId: 4 },
+  { id: 6, name: "Limpeza Dental", duration: "45 min", price: 200, professionalId: 3 },
+  { id: 7, name: "Aparelho Ortodôntico", duration: "60 min", price: 500, professionalId: 3 },
+  { id: 8, name: "Corte Feminino", duration: "45 min", price: 120, professionalId: 4 },
+  { id: 9, name: "Coloração", duration: "90 min", price: 250, professionalId: 4 },
+  { id: 10, name: "Manicure Gel", duration: "60 min", price: 80, professionalId: 5 },
+  { id: 11, name: "Pedicure Completa", duration: "45 min", price: 70, professionalId: 5 },
 ];
 
 export const timeSlots = [
