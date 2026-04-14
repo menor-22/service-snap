@@ -1,16 +1,13 @@
 import { useNavigate } from "react-router-dom";
-import { Search, Stethoscope, SmilePlus, Sparkles, Brain, Apple, Activity } from "lucide-react";
+import { Search } from "lucide-react";
 import { categories, professionals } from "@/data/mockData";
 import { Input } from "@/components/ui/input";
 import BottomNav from "@/components/BottomNav";
-
-const iconMap: Record<string, React.ElementType> = {
-  Stethoscope, SmilePlus, Sparkles, Brain, Apple, Activity,
-};
+import calendarIcon from "@/assets/calendar-icon.png";
 
 const Home = () => {
   const navigate = useNavigate();
-  const featured = professionals.slice(0, 3);
+  const featured = professionals.slice(0, 4);
 
   return (
     <div className="mobile-container bg-muted pb-20">
@@ -21,9 +18,7 @@ const Home = () => {
             <p className="text-primary-foreground/70 text-sm">Olá, 👋</p>
             <h1 className="text-xl font-bold text-primary-foreground">João da Silva</h1>
           </div>
-          <div className="w-10 h-10 rounded-full bg-primary-foreground/20 flex items-center justify-center text-lg">
-            👤
-          </div>
+          <img src={calendarIcon} alt="Calendário" className="w-10 h-10" />
         </div>
         <div className="relative">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
@@ -34,22 +29,17 @@ const Home = () => {
       <div className="px-6 mt-6">
         {/* Categories */}
         <h2 className="text-base font-semibold text-card-foreground mb-4">Categorias</h2>
-        <div className="grid grid-cols-3 gap-3 mb-8">
-          {categories.map((cat) => {
-            const Icon = iconMap[cat.icon] || Stethoscope;
-            return (
-              <button
-                key={cat.id}
-                onClick={() => navigate(`/explore?category=${cat.id}`)}
-                className="flex flex-col items-center gap-2 p-4 bg-background rounded-2xl shadow-sm hover:shadow-md transition-shadow"
-              >
-                <div className="w-12 h-12 rounded-xl bg-accent flex items-center justify-center">
-                  <Icon className="w-6 h-6 text-accent-foreground" />
-                </div>
-                <span className="text-xs font-medium text-card-foreground">{cat.name}</span>
-              </button>
-            );
-          })}
+        <div className="grid grid-cols-4 gap-3 mb-8">
+          {categories.map((cat) => (
+            <button
+              key={cat.id}
+              onClick={() => navigate(`/explore?category=${cat.id}`)}
+              className="flex flex-col items-center gap-2 p-3 bg-background rounded-2xl shadow-sm hover:shadow-md transition-shadow"
+            >
+              <img src={cat.image} alt={cat.name} className="w-12 h-12 object-contain" />
+              <span className="text-xs font-medium text-card-foreground">{cat.name}</span>
+            </button>
+          ))}
         </div>
 
         {/* Featured */}

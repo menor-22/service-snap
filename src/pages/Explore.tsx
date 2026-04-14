@@ -24,7 +24,7 @@ const Explore = () => {
           <Input placeholder="Buscar profissionais..." className="pl-11 h-12 rounded-xl" />
         </div>
 
-        {/* Filter chips */}
+        {/* Filter chips with category images */}
         <div className="flex gap-2 overflow-x-auto pb-4 scrollbar-hide">
           <button
             onClick={() => setActiveCategory(null)}
@@ -38,10 +38,11 @@ const Explore = () => {
             <button
               key={cat.id}
               onClick={() => setActiveCategory(cat.id)}
-              className={`px-4 py-2 rounded-full text-xs font-medium whitespace-nowrap transition-colors ${
+              className={`flex items-center gap-1.5 px-3 py-2 rounded-full text-xs font-medium whitespace-nowrap transition-colors ${
                 activeCategory === cat.id ? "bg-primary text-primary-foreground" : "bg-background text-muted-foreground"
               }`}
             >
+              <img src={cat.image} alt={cat.name} className="w-5 h-5 object-contain" />
               {cat.name}
             </button>
           ))}
