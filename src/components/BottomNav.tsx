@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { Home, Search, CalendarCheck, User } from "lucide-react";
+import calendarIcon from "@/assets/calendar-icon.png";
 
 const tabs = [
   { id: "home", icon: Home, label: "Início", path: "/home" },
@@ -23,7 +24,11 @@ const BottomNav = ({ active }: { active: string }) => {
               isActive ? "text-primary" : "text-muted-foreground"
             }`}
           >
-            <tab.icon className={`w-5 h-5 ${isActive ? "stroke-[2.5]" : ""}`} />
+            {tab.id === "bookings" ? (
+              <img src={calendarIcon} alt="Reservas" className={`w-5 h-5 ${isActive ? "opacity-100" : "opacity-50"}`} />
+            ) : (
+              <tab.icon className={`w-5 h-5 ${isActive ? "stroke-[2.5]" : ""}`} />
+            )}
             <span className="text-xs font-medium">{tab.label}</span>
           </button>
         );
